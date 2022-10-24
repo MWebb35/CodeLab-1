@@ -1,0 +1,37 @@
+#include <iostream> //Allow Input/Output
+#include <string> //Allows String and String Manipulation
+using namespace std;
+int main() {
+    //consts are variables whose value cannot be modified later
+  const int COVERAGE = 350; // paint covers 350 sq ft per gallon
+    // declare integers length, width, and height
+  int length;
+  int width;
+  int height;
+    // declare double totalSqFt;
+  double totalSqFt;
+    // declare double paintNeeded;
+  double paintNeeded;
+    // prompt for and read in the length of the room
+  std::cout << "Enter a value for length ";
+  std::cin >> length;
+    // prompt for and read in the width of the room
+
+  std::cout << "Enter a value for width ";
+  std::cin >> width;
+    // prompt for and read in the height of the room
+
+  std::cout << "Enter a value for height ";
+  std::cin >> height;
+    // Compute the total square feet to be painted - think about   the dimensions of each wall assuming standard four wall room.
+
+  totalSqFt = length * width;
+    // Compute the amount of paint needed
+
+  paintNeeded = totalSqFt/350;
+  
+    // Print the length, width, and height of the room, the total square feet and number of gallons of paint required
+
+  std::cout << "Length: " << length << "\nWidth: " << width << "\nHeight: " << height << "\nTotal Square Feet: " << totalSqFt << "\nPaint needed (in gallons): " << paintNeeded;
+    return 0;
+}
