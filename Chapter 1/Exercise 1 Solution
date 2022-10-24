@@ -1,0 +1,7 @@
+#include <iostream> //Allows Input/Output 
+#include <string>  //Allows String and String Manipulation
+using namespace std; // Declares the use of the standard mainspace
+
+int main() {
+    cout << "Coding is Cool" << endl; //Outputs "Coding is Cool" to the console
+}
