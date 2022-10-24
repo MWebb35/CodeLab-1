@@ -1,0 +1,12 @@
+#include <iostream> // Allows Input/Output
+using namespace std; ////Declares the use of the standard mainspace
+
+int main() {
+    /*int*/ double numberOne = 50; 
+    /*int*/ double numberTwo = 7;
+    cout << numberOne/numberTwo << endl;
+
+  //Error with the divison was the variables were declared as integers, not doubles. The original variable could not handle the decimal places of the result of the output.
+
+    return 0;
+}
