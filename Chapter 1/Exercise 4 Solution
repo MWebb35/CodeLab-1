@@ -12,6 +12,8 @@ int main() {
     char decision;
     std::cout << "Would you like to make your own sum? Y/N ";
     std::cin >> decision;
+    
+    decision = decision - 32; //Contgency plan for if the user enters a value that isn't an upper case value. Converts the value to uppercase
 
 
     if (decision == 'Y') {
