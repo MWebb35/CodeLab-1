@@ -1,0 +1,12 @@
+#include <iostream> //Allows Input/Output
+using namespace std; //Declares the use of the standard mainspace
+
+int main() {
+    int age; //declare and initialise age variable
+    if(age >= 18){ //check if age is greater than or equal to 18
+        std::cout << "Can Vote" << endl; //output can vote message
+    }else{ //age must be less that 18
+        std::cout << "Can't Vote" << endl;  //output can vote message (I'm sure this comment should say can't vote as it's for the under 18's)
+    }
+    return 0;
+}
