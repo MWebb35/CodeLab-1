@@ -1,0 +1,38 @@
+#include <iostream> // Allows Input/Output
+using namespace std; ////Declares the use of the standard mainspace
+
+/*Throughout this program, std is still used. Whilst this isn't necessary, I felt it useful to add this in where possible for good coding practice. The code runs the same without it, due to the decleration of the standard name space.*/
+
+int main() {
+    int numberOne = 8; //camelCasing is used here to make it easier to read
+    int numberTwo = 10;
+    int result = numberOne + numberTwo;
+    cout << numberOne << " + " << numberTwo << " = " << result << endl;
+
+    char decision;
+    std::cout << "Would you like to make your own sum? Y/N ";
+    std::cin >> decision;
+
+
+    if (decision == 'Y') {
+      int personalNumberOne;
+      int personalNumberTwo;
+      int personalResult;
+
+      std::cout << "Enter number 1 ";
+      std::cin >> personalNumberOne;
+
+      std::cout << "Enter number 2 ";
+      std::cin >> personalNumberTwo;
+
+      personalResult = personalNumberOne + personalNumberTwo;
+
+      std::cout << personalNumberOne << " + " << personalNumberTwo << " = " << personalResult;
+
+      return 0;
+      
+    } else {
+      return 0;
+    }
+    
+}
