@@ -1,0 +1,27 @@
+#include <iostream> // Allows Input/Output
+using namespace std; //Declares the use of the standard mainspace
+
+int main() {
+
+  //Varible intialise
+  int money;
+  int money_after_purchase;
+  int money_needed;
+
+  std::cout << "How much money do you have?";
+  std::cin >> money;
+
+  if (money >= 25){
+    std::cout << "You can buy the game";
+
+    money_after_purchase = money - 25;
+
+    std::cout << "\nYou have £" << money_after_purchase << " remaining";
+    
+  } else {
+    money_needed = 25 - money;
+    std::cout << "I need to save £" << money_needed;
+  }
+
+  return 0;
+}
