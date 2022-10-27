@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  int age;
+  double height;
+
+  std::cout << "Welcome to BSC Computing Park! All the fun of a theme park on the budget of a compsci student!";
+
+  std::cout << "\n\nIn order to ride, you have to be a certain height. Something that my classmates repeatedly tell me I don't meet.";
+
+  std::cout << "\n\nYou also have to be a certain age because children suck.";
+
+  std::cout << "\n\nPlease enter your height in meters ";
+
+  std::cin >> height;
+
+  std::cout << "\n\nPlease enter your age ";
+
+  std::cin >> age;
+
+  if (height > 0.6 && age >= 5){
+    std::cout << "\nCongratulations! You can ride.";
+
+    std::cout << "\nOh what's that? You want to know what you're riding?";
+
+    std::cout << "\n\nYou, my lucky friend, just got prime access to a three hour lecture into the delights and wonders that is binary.\nStrap in... please keep your arms and legs inside the vehical.\nAnd please, keep the screaming to a minimum.";
+  }else {
+    std::cout << "Oh I'm sorry. You can't ride just yet.";
+  }
+
+  return 0;
+}
