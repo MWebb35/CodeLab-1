@@ -25,7 +25,7 @@ int main() {
 
     std::cout << "\nOh what's that? You want to know what you're riding?";
 
-    std::cout << "\n\nYou, my lucky friend, just got prime access to a three hour lecture into the delights and wonders that is binary.\nStrap in... please keep your arms and legs inside the vehical.\nAnd please, keep the screaming to a minimum.";
+    std::cout << "\n\nYou, my lucky friend, just got prime access to a three hour lecture into the delights and wonders that is binary.\nStrap in... please keep your arms and legs inside the vehicle.\nAnd please, keep the screaming to a minimum.";
   }else {
     std::cout << "Oh I'm sorry. You can't ride just yet.";
   }
