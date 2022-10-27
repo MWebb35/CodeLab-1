@@ -1,10 +1,11 @@
-#include <iostream>
-using namespace std;
+#include <iostream>//allows input/output
+using namespace std;//delcares use of the standard namespace
 
 int main() {
-  int age;
+  int age; //intialises variables
   double height;
 
+//rambly introcutory bit. Or as I like to call it - storytelling
   std::cout << "Welcome to BSC Computing Park! All the fun of a theme park on the budget of a compsci student!";
 
   std::cout << "\n\nIn order to ride, you have to be a certain height. Something that my classmates repeatedly tell me I don't meet.";
@@ -13,13 +14,13 @@ int main() {
 
   std::cout << "\n\nPlease enter your height in meters ";
 
-  std::cin >> height;
+  std::cin >> height; //assigns a value to a veriable
 
   std::cout << "\n\nPlease enter your age ";
 
   std::cin >> age;
 
-  if (height > 0.6 && age >= 5){
+  if (height > 0.6 && age >= 5){ //conditional statement with two conditions that have to be met. Example of the boolean operator AND
     std::cout << "\nCongratulations! You can ride.";
 
     std::cout << "\nOh what's that? You want to know what you're riding?";
