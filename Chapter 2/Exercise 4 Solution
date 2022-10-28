@@ -1,15 +1,20 @@
 #include <iostream>//Allows input/output
-using namespace std; // Declares the standard namespace
+using namespace std; // Declares the common namespace
 
 int interactive(){ //Function to call the interactive element of the program. This has its own return so that it can end independent of the main program. The reason for the interactive element is to allow more freedom to the user as it allows them to input their own variables
 
    //These variables exist on a local level, meaning they can reuse the same names as the ones in other functions. 
-    bool musicalFriend = false;//set to false to help with a logic error
+    bool musicalFriend = false;
     string friendPlays;
+    int temp;//Contingency variable
 
     std::cout << "\nDo you have a musical friend? 1(yes)/0(no) ";//boolean inputs exist in a 1/0 state for true and false. There was an error here where it wouldn't allow the words true and false. 
 
-    std::cin >> musicalFriend;
+    std::cin >> temp;
+
+    if (temp == 1) {
+      musicalFriend = true;
+    } //Contigency to avoid the logic error overflow - initally without the temp variable the code would still run the first If loop on a non boolean variable as it considered it to be true if the input was over 0.
 
     if (musicalFriend == true){
 
@@ -17,7 +22,7 @@ int interactive(){ //Function to call the interactive element of the program. Th
 
       std::cin >> friendPlays;
       
-      if (friendPlays == "guitar" || friendPlays == "drums"){//|| OR symbol
+      if (friendPlays == "guitar" || friendPlays == "drums"){//|| or symbol
         std::cout << "\nYou can start a band";
         
       }else {//nested else
