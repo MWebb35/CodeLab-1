@@ -1,0 +1,24 @@
+#include <iostream> //Allows Input/Output
+using namespace std; //Declares the use of the standard namespace
+
+int main() {
+
+  int user_input;
+
+  std::cout << "Enter any number other than 5 ";
+  std::cin >> user_input; //Used outside of the loop to initalise it. Not 100% necessary, but it acts as a demonstration as to how loops work. Plus, it works as a contingency so the loop doesn't have to be inacted if the user enters 5 on the first try.
+
+  while (user_input != 5){
+    std::cout << "Enter any number other than 5 ";
+    std::cin >> user_input;
+
+    if (user_input == 5) {
+      break; // Break clause
+    }
+  }
+
+  std::cout << "Hey! You weren't supposed to enter 5! >:("; //Will output when the loop is broken
+
+  return 0;
+  
+}
