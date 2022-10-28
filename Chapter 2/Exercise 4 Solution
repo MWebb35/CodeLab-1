@@ -1,23 +1,23 @@
 #include <iostream>//Allows input/output
-using namespace std; // Declares the common namespace
+using namespace std; // Declares the standard namespace
 
 int interactive(){ //Function to call the interactive element of the program. This has its own return so that it can end independent of the main program. The reason for the interactive element is to allow more freedom to the user as it allows them to input their own variables
 
-   //These variables exist on a local level, meaning they can reuse the same names as the ones in the main function. 
-    bool musicalFriend = false;
+   //These variables exist on a local level, meaning they can reuse the same names as the ones in other functions. 
+    bool musicalFriend = false;//set to false to help with a logic error
     string friendPlays;
 
-    std::cout << "\nDo you have a musical friend? 1(yes)/0(no)";//boolean inputs exist in a 1/0 state for true and false. There was an error here where it wouldn't allow the words true and false. 
+    std::cout << "\nDo you have a musical friend? 1(yes)/0(no) ";//boolean inputs exist in a 1/0 state for true and false. There was an error here where it wouldn't allow the words true and false. 
 
     std::cin >> musicalFriend;
 
     if (musicalFriend == true){
-      
-      std::cout << "What instrument does your friend play?";//input is taken here as there is no point taking it before if the user answers false. The variable assignment only applies to this part of the nested if statement
+
+      std::cout << "What instrument does your friend play? ";//input is taken here as there is no point taking it before if the user answers false. The variable assignment only applies to this part of the nested if statement
 
       std::cin >> friendPlays;
       
-      if (friendPlays == "guitar" || friendPlays == "drums"){//|| or symbol
+      if (friendPlays == "guitar" || friendPlays == "drums"){//|| OR symbol
         std::cout << "\nYou can start a band";
         
       }else {//nested else
@@ -27,21 +27,12 @@ int interactive(){ //Function to call the interactive element of the program. Th
       std::cout << "You can't start a band";
       return 0;//return here as a contigency
     }
+ 
   return 0;
 }
 
-int main() {
-  int decision;//variable for the user to decide what version of the program they want to use
-  
-  std::cout << "Would you like to use the interactive version or the standard version (with pre-set variables? Enter 1 for interactive, enter 2 for standard (standard will be the default for misentered inputs)";
-
-  std::cin >> decision;
-
-  if (decision == 1){
-    interactive();//call to the interactive function
-  }else {
-
-    //Variable allocations given in the task overview
+int standard(){//Moved into a function to see if this would fix a logic error
+  //Variable allocations given in the task overview
     bool musicalFriend = true;
     string friendPlays = "guitar";
 
@@ -54,7 +45,22 @@ int main() {
     } else {
       std::cout << "You can't start a band";
     }
-  }
+  return 0;
+}
+
+int main() {//main program. Purpose: user decides what version they want to use
+  int decision;//variable that stores the input of the user's decision of what program they want to use
+  
+  std::cout << "Would you like to use the interactive version or the standard version (with pre-set variables)\n\n Enter 1 for interactive, enter 2 for standard (standard will be the default for misentered inputs) ";
+
+  std::cin >> decision;
+
+  if (decision == 1){
+    interactive();//call to the interactive function
+  }else {
+    standard();
+    }
+    
   
 return 0;
   
