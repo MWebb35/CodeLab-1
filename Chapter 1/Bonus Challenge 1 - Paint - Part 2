@@ -1,0 +1,51 @@
+#include <iostream> //Allow Input/Output
+#include <string> //Allows String and String Manipulation
+using namespace std; //Declares the use of the standard namespace
+
+int main() {
+    
+  const int COVERAGE = 350; 
+    
+  int length;
+  int width;
+  int height;
+
+  int doors = 0;
+  int windows = 0;
+    
+  double totalSqFt;
+
+  double paintNeeded;
+
+  std::cout << "Enter a value for length ";
+  std::cin >> length;
+    
+
+  std::cout << "Enter a value for width ";
+  std::cin >> width;
+    
+
+  std::cout << "Enter a value for height ";
+  std::cin >> height;
+
+  std::cout << "How many doors are there in the room? ";
+  std::cin >> doors;
+
+  std::cout << "How many windows are there in the room? ";
+  std::cin >> windows;
+
+  doors = doors * 20;//CONST sqft for doors = 20
+  windows = windows * 15;//CONST sqft for windows = 5
+  //The constant variables could've been hard code, but for the sake of the program where t stays constant, it seems better 
+
+  totalSqFt = length * width;
+
+  totalSqFt -= doors;
+  totalSqFt -= windows;
+    
+
+  paintNeeded = totalSqFt/350;
+
+  std::cout << "Length: " << length << "\nWidth: " << width << "\nHeight: " << height << "\nDoors: " << doors << "\nWindows: " << windows << "\nTotal Square Feet: " << totalSqFt << "\nPaint needed (in gallons): " << paintNeeded;
+    return 0;
+}
