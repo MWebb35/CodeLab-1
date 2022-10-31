@@ -25,7 +25,8 @@ int main() {
   std::cin >> height;
     // Compute the total square feet to be painted - think about   the dimensions of each wall assuming standard four wall room.
 
-  totalSqFt = length * width;
+  totalSqFt = length * height;
+  totalSqFt = totalSqFt * 4;
     // Compute the amount of paint needed
 
   paintNeeded = totalSqFt/350;
