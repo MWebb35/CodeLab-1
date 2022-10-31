@@ -1,0 +1,30 @@
+#include <iostream>//Allows input/output
+using namespace std;
+
+int main() {
+    cout << "Would you like to continue? (Y/N): "; //ask for input
+    char continue_Dec; //variable for user answer;
+    cin >> continue_Dec;//get user input
+
+    switch (continue_Dec) { //evaluate expression
+        case 'Y': //case for Y
+            std::cout << "You have chosen to continue"; //cout message if user enters Y
+            break; //break to end case
+      
+        case 'N': //case for N
+             std::cout << "You have chosen not to continue"; //cout message if user enters N
+            break;
+      
+        case 'y'://Contingency for lower case inputs
+            std::cout << "You have chosen to continue"; //cout message if user enters y
+            break; //break to end case
+      
+        case 'n'://Contingency for lower case inputs
+            std::cout << "You have chosen not to continue"; //cout message if user enters n
+            break; //break to end case
+      
+        default: //default case
+            std::cout << "The input was not recognised"; //default message if neither Y or N entered
+    }
+    return 0;
+}
