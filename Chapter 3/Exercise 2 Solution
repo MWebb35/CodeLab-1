@@ -1,0 +1,35 @@
+#include <iostream> //Allows Input/Output
+
+int main() {
+  int num_Month; 
+
+  std::cout << "Enter the number of the month (e.g 1 = January, 3 = March...) : ";
+  std::cin >> num_Month; //Assigns a value to the variable
+
+  switch(num_Month){
+    case 1: //Groups cases together
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+      std::cout << "The month contains 31 days";
+    break;
+
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+      std::cout << "The month contains 30 days";
+      break;
+
+    case 2:
+      std::cout << "The month contains 28/29 days";
+      break;
+
+    default:
+      std::cout << "The input was not recognised"; //Contingency for unrecognised inputs
+      
+  }
+}
