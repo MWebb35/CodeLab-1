@@ -38,7 +38,8 @@ int main() {
   windows = windows * 15;//CONST sqft for windows = 5
   //The constant variables could've been hard code, but for the sake of the program where t stays constant, it seems better 
 
-  totalSqFt = length * width;
+  totalSqFt = length * height;
+  totalSqFt = totalSqFt * 4;
 
   totalSqFt -= doors;
   totalSqFt -= windows;
