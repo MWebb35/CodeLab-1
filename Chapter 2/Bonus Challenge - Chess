@@ -17,16 +17,16 @@ int main() {
   if (user_pos_col == 'a' || user_pos_col == 'c' || user_pos_col == 'e' || user_pos_col == 'g'){ //|| OR operator
     
     if (user_pos_row % 2 == 0){ //Checks if the input is even
-      std::cout << "The square is white";
-    }else {//Input is odd
       std::cout << "The square is black";
+    }else {//Input is odd
+      std::cout << "The square is white";
     }
     
   } else { 
     if (user_pos_row % 2 == 0){
-      std::cout << "The square is black";
-    }else {
       std::cout << "The square is white";
+    }else {
+      std::cout << "The square is black";
     }
   }
 
