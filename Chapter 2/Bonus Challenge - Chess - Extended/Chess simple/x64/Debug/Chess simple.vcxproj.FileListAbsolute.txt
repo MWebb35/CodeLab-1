@@ -1,0 +1,8 @@
+C:\Users\Madis\source\repos\Chess simple\Chess simple\x64\Debug\Chess simple.vcxproj.AssemblyReference.cache
+C:\Users\Madis\source\repos\Chess simple\Chess simple\x64\Debug\Chess simple.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\Madis\source\repos\Chess simple\Chess simple\x64\Debug\Chess_simple.Form1.resources
+C:\Users\Madis\source\repos\Chess simple\Chess simple\x64\Debug\Chess simple.vcxproj.GenerateResource.cache
+C:\Users\Madis\OneDrive\Documents\GitHub\CodeLab-1\Chapter 2\Bonus Challenge - Chess - Extended\Chess simple\x64\Debug\Chess simple.vcxproj.AssemblyReference.cache
+C:\Users\Madis\OneDrive\Documents\GitHub\CodeLab-1\Chapter 2\Bonus Challenge - Chess - Extended\Chess simple\x64\Debug\Chess simple.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\Madis\OneDrive\Documents\GitHub\CodeLab-1\Chapter 2\Bonus Challenge - Chess - Extended\Chess simple\x64\Debug\Chess_simple.Form1.resources
+C:\Users\Madis\OneDrive\Documents\GitHub\CodeLab-1\Chapter 2\Bonus Challenge - Chess - Extended\Chess simple\x64\Debug\Chess simple.vcxproj.GenerateResource.cache

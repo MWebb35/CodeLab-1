@@ -1,0 +1,5 @@
+﻿  CppCLR_WinFormsProject.cpp
+  The contents of <format> are available only with C++20 or later.
+C:\Users\Madis\OneDrive\Documents\GitHub\CodeLab-1\Chapter 2\Bonus Challenge - Chess - Extended\Chess simple\Form1.h(169,24): warning C4244: 'initializing': conversion from 'wchar_t' to 'char', possible loss of data
+  AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Chess simple.vcxproj -> C:\Users\Madis\OneDrive\Documents\GitHub\CodeLab-1\Chapter 2\Bonus Challenge - Chess - Extended\x64\Debug\Chess simple.exe
