@@ -1,7 +1,7 @@
 #include <iostream>//allows input/output
 using namespace std;//delcares use of the standard namespace
 
-int main() {
+int main() { //Intialises the main function
   int age; //intialises variables
   double height;
 
@@ -12,23 +12,23 @@ int main() {
 
   std::cout << "\n\nYou also have to be a certain age because children suck.";
 
-  std::cout << "\n\nPlease enter your height in meters ";
+  std::cout << "\n\nPlease enter your height in meters "; //Prompts for input
 
-  std::cin >> height; //assigns a value to a veriable
+  std::cin >> height; //assigns a value to the variable
 
-  std::cout << "\n\nPlease enter your age ";
+  std::cout << "\n\nPlease enter your age "; //Prompts for input
 
-  std::cin >> age;
+  std::cin >> age; // reads and assigns a value to the variable
 
   if (height > 0.6 && age >= 5){ //conditional statement with two conditions that have to be met. Example of the boolean operator AND
-    std::cout << "\nCongratulations! You can ride.";
+    std::cout << "\nCongratulations! You can ride."; //Output to the console
 
-    std::cout << "\nOh what's that? You want to know what you're riding?";
+    std::cout << "\nOh what's that? You want to know what you're riding?"; //Output to the console
 
     std::cout << "\n\nYou, my lucky friend, just got prime access to a three hour lecture into the delights and wonders that is binary.\nStrap in... please keep your arms and legs inside the vehicle.\nAnd please, keep the screaming to a minimum.";
   }else {
-    std::cout << "Oh I'm sorry. You can't ride just yet.";
+    std::cout << "Oh I'm sorry. You can't ride just yet."; //Output to the console
   }
 
-  return 0;
+  return 0; //Terminates the program
 }
