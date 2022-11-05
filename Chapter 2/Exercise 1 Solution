@@ -8,5 +8,5 @@ int main() {
     }else{ //age must be less that 18
         std::cout << "Can't Vote" << endl;  //output can vote message (I'm sure this comment should say can't vote as it's for the under 18's)
     }
-    return 0;
+    return 0; //Terminates program
 }
