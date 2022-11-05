@@ -2,10 +2,10 @@
 #include <string> // Allows String and String Manipulation
 using namespace std; //Declares the use of the standard mainspace
 
-int main() {
+int main() { //Initilises the main function
 
   //Decleration of variables
-    int firstNumber = 1; //Declares the data type, the variable name and then assigns it a variable 
+    int firstNumber = 1; //Declares the data type, the variable name and then assigns it a contents 
     bool iCanCode = true;
     char hopefulGrade = 'a';
     double myDecimal = 1.0;
@@ -18,14 +18,14 @@ int main() {
     /*Error check for the outputs. This is to see if they would output without throwing the program, which would indicate that the wrong data type had been used*/
 
   //Variable List
-    std::cout << "First Number: " << firstNumber << "\n";
+    std::cout << "First Number: " << firstNumber << "\n"; //Outputs First Number as a string, and then the contents associated with the variable firstNumber
     std::cout << "I Can Code: " << iCanCode << "\n"; // This will output one, which is the equivalent to true
   
-    std::cout << "Hopeful Grade " << hopefulGrade << "\n";
-    std::cout << "My Decimal: " << myDecimal << "\n";
-    std::cout << "Minimal Sentence: " << minimalSentance << "\n"; 
-    std::cout << "Key Mash: " << keyMash << "\n";
-    std::cout << "Mystery Data type (Float): " << mysteryDataType;
+    std::cout << "Hopeful Grade " << hopefulGrade << "\n"; //Outputs Hopeful Grade as a string, and then the contents associated with the variable hopefulGrade
+    std::cout << "My Decimal: " << myDecimal << "\n"; //Outputs My Decimal as a string, and then the contents associated with the variable myDecimal
+    std::cout << "Minimal Sentence: " << minimalSentance << "\n"; //Outputs Minimal sentence as a string, and then the contents associated with the variable minimalSentence
+    std::cout << "Key Mash: " << keyMash << "\n"; //Outputs Key Mash as a string, and then the contents associated with the variable keyMash
+    std::cout << "Mystery Data type (Float): " << mysteryDataType; //Outputs Mystery Data Type as a string, and then the contents associated with the variable mysteryDataType
 
-    return 0;
+    return 0; //Terminates the program
 }
