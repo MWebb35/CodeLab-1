@@ -1,56 +1,61 @@
 #include <iostream>//Allows input/output
-using namespace std; // Declares the common namespace
+using namespace std; // Declares the use of the standard namespace
 
-int interactive(){ //Function to call the interactive element of the program. This has its own return so that it can end independent of the main program. The reason for the interactive element is to allow more freedom to the user as it allows them to input their own variables
+int interactive(){ /*Function to call the interactive element of the program. 
+This has its own return so that it can end independent of the main program. 
+The reason for the interactive element is to allow more freedom to the user as it allows them to input their own variables. This enhances the user experience*/
 
    //These variables exist on a local level, meaning they can reuse the same names as the ones in other functions. 
-    bool musicalFriend = false;
-    string friendPlays;
+    bool musicalFriend = false; //Assigns a value to the variable
+    string friendPlays; //Initalises the variable
     int temp;//Contingency variable
 
-    std::cout << "\nDo you have a musical friend? 1(yes)/0(no) ";//boolean inputs exist in a 1/0 state for true and false. There was an error here where it wouldn't allow the words true and false. 
+    std::cout << "\nDo you have a musical friend? 1(yes)/0(no) "; //Prompts for input
+    //boolean inputs exist in a 1/0 state for true and false. There was an error here where it wouldn't allow the words true and false. 
 
-    std::cin >> temp;
+    std::cin >> temp; //Reads and assigns a value to the variable
 
-    if (temp == 1) {
-      musicalFriend = true;
-    } //Contigency to avoid the logic error overflow - initally without the temp variable the code would still run the first If loop on a non boolean variable as it considered it to be true if the input was over 0.
+    if (temp == 1) { //IF true 
+      musicalFriend = true; //Reassigns value to the new variable
+    } /*Contigency to avoid the logic error overflow
+    initally without the temp variable the code would still run the first If loop on a non boolean variable as it considered it to be true if the input was over 0.*/
 
     if (musicalFriend == true){
 
-      std::cout << "What instrument does your friend play? ";//input is taken here as there is no point taking it before if the user answers false. The variable assignment only applies to this part of the nested if statement
+      std::cout << "What instrument does your friend play? "; //Prompts for input
+      //input is taken here as there is no point taking it before if the user answers false. The variable assignment only applies to this part of the nested if statement
 
-      std::cin >> friendPlays;
+      std::cin >> friendPlays; //Reads and assigns a value to the variable
       
-      if (friendPlays == "guitar" || friendPlays == "drums"){//|| or symbol
-        std::cout << "\nYou can start a band";
+      if (friendPlays == "guitar" || friendPlays == "drums"){//|| OR symbol - user can either enter drums or guitar as a valid input
+        std::cout << "\nYou can start a band"; //Ouput to the console
         
       }else {//nested else
-        std::cout << "\nYou can't start a band.";
+        std::cout << "\nYou can't start a band."; //Output to the console
       }
-    } else {
-      std::cout << "You can't start a band";
-      return 0;//return here as a contigency
+    } else { //Else here is satisfied if musicalFriend != true
+      std::cout << "You can't start a band"; //Output to the console
+      return 0; //return here as a contigency
     }
  
-  return 0;
+  return 0; //Terminates the function
 }
 
-int standard(){//Moved into a function to see if this would fix a logic error
+int standard(){ //Moved into a function to see if this would fix a logic error
   //Variable allocations given in the task overview
-    bool musicalFriend = true;
-    string friendPlays = "guitar";
+    bool musicalFriend = true; //initialises the variable and assigns it a value
+    string friendPlays = "guitar"; //initialises the variable and assigns it a value
 
-    if (musicalFriend == true){//first conditon
-      if (friendPlays == "guitar" || friendPlays == "drums"){//second conditon
-        std::cout << "\nYou can start a band";
-      }else {
-        std::cout << "\nYou can't start a band.";
+    if (musicalFriend == true){ //first conditon
+      if (friendPlays == "guitar" || friendPlays == "drums"){ //second conditon
+        std::cout << "\nYou can start a band"; //output to the console
+      }else { //nested else
+        std::cout << "\nYou can't start a band."; //output to the console
       }
     } else {
-      std::cout << "You can't start a band";
+      std::cout << "You can't start a band"; //output to the console
     }
-  return 0;
+  return 0; //terminates the function
 }
 
 int main() {//main program. Purpose: user decides what version they want to use
@@ -58,15 +63,15 @@ int main() {//main program. Purpose: user decides what version they want to use
   
   std::cout << "Would you like to use the interactive version or the standard version (with pre-set variables)\n\n Enter 1 for interactive, enter 2 for standard (standard will be the default for misentered inputs) ";
 
-  std::cin >> decision;
+  std::cin >> decision; //Reads and assigns the variable a value
 
-  if (decision == 1){
-    interactive();//call to the interactive function
-  }else {
-    standard();
+  if (decision == 1){ //conditional statement 
+    interactive(); //call to the interactive function
+  }else { //Accounts for invalid entries as well as the standard option (2)
+    standard(); //call to the standard function
     }
     
   
-return 0;
+return 0; // terminates program
   
 }
