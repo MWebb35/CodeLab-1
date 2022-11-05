@@ -2,6 +2,6 @@
 #include <string>  //Allows String and String Manipulation
 using namespace std; // Declares the use of the standard mainspace
 
-int main() {
+int main() { //Initialises the main function
     cout << "Coding is Cool" << endl; //Outputs "Coding is Cool" to the console
 }
