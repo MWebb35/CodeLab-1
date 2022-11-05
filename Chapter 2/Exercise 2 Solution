@@ -1,27 +1,27 @@
 #include <iostream> // Allows Input/Output
 using namespace std; //Declares the use of the standard mainspace
 
-int main() {
+int main() { //Initlises the main function
 
   //Varible intialise
-  int money;
+  int money; //Assumes input will be a whole number. A more complex program would use doubles or float
   int money_after_purchase;
   int money_needed;
 
-  std::cout << "How much money do you have?";
-  std::cin >> money;
+  std::cout << "How much money do you have?"; //Prompts for input
+  std::cin >> money; //Reads and assigns a value to money
 
-  if (money >= 25){
-    std::cout << "You can buy the game";
+  if (money >= 25){ //Conditional statement to see if money is greater than or equal to 25 - 25 being the price of the game
+    std::cout << "You can buy the game"; //Outputs to the terminal
 
-    money_after_purchase = money - 25;
+    money_after_purchase = money - 25; //Reassigns variable with new value
 
-    std::cout << "\nYou have £" << money_after_purchase << " remaining";
+    std::cout << "\nYou have £" << money_after_purchase << " remaining"; //Outputs to the console
     
   } else {
-    money_needed = 25 - money;
-    std::cout << "I need to save £" << money_needed;
+    money_needed = 25 - money; //Reassigns variable with new variable
+    std::cout << "I need to save £" << money_needed; //Outputs to the terminal
   }
 
-  return 0;
+  return 0; //Terminates the program
 }
