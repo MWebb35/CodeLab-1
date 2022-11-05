@@ -1,40 +1,56 @@
 #include <iostream> // Allows Input/Output
 using namespace std; ////Declares the use of the standard mainspace
 
-/*Throughout this program, std is still used. Whilst this isn't necessary, I felt it useful to add this in where possible for good coding practice. The code runs the same without it, due to the decleration of the standard name space.*/
+/*Throughout this program, std is still used. 
+Whilst this isn't necessary, I felt it useful to add this in where possible for good coding practice. 
+The code runs the same without it, due to the decleration of the standard name space.*/
 
 int main() {
-    int numberOne = 8; //camelCasing is used here to make it easier to read
-    int numberTwo = 10;
-    int result = numberOne + numberTwo;
-    cout << numberOne << " + " << numberTwo << " = " << result << endl;
+    int numberOne = 8; //Assigns the variable numberOne with the integer 8 - camelCasing is used here to make it easier to read
+    int numberTwo = 10; //Assigns the variable numberTwo with the integer 10
+    int result = numberOne + numberTwo; //Assigns the variable resukt with the result of the sum of variables numberOne and numberTwo
+    cout << numberOne << " + " << numberTwo << " = " << result << endl; //Outputs the contents of numberOne, +, the contents of numberTwo, =, and the contents of result
 
-    char decision;
-    std::cout << "Would you like to make your own sum? Y/N ";
-    std::cin >> decision;
+    char decision; //Initalises a char variable named decision
+    std::cout << "Would you like to make your own sum? Y/N "; //Outputs prompt to the console
+    std::cin >> decision; //Reads and assigns the input to the variable decision
     
-    decision = decision - 32; //Contgency plan for if the user enters a value that isn't an upper case value. Converts the value to uppercase
+   if (decision != 'Y'){
+      /*There was an logic error here before where if the user entered Y on the inital assignment, the program would terminate. 
+      I only picked up on this during testing.
+      To fix this, I used a simple if statement to decide that if the input wasn't the desired input on inital assignment, the ToUpper code would run.
+      This means that the ToUpper code wouldn't apply to an input that didn't need it, meaning that in theory the program will be more efficent for users that have entered the presumed input,
+      as it will pass this if statement entirely.*/
+      
+      decision = decision - 32; //Contgency plan for if the user enters a value that isn't an upper case value
+    } /* I found that an else statement wasn't necessary here, and that the program runs without it. 
+    Whilst this isn't great coding practice, it does save on lines which will ultimately save on memory.
+    For a small program such as this one, the lack of else doesn't seem to impact the overall.*/
 
+    if (decision == 'Y') { //Compares if the contents of char variable decision is equal to the required input
+     
+     /*These set of integer values are used in an instance where the user wishes to make their own sum. 
+     They are named differently to the variables seen prior in the program so that the program doesn't have to reallocated values. 
+     Whilst it takes up more storage doing it this way, it avoids errors regarding reassignment.*/
+     
+      int personalNumberOne; //Initlises integer variable personalNumberOne
+      int personalNumberTwo; //Initilises integer variable personalNumberTwo
+      int personalResult; //Initlises integer variable personalResult
+      
+      std::cout << "Enter number 1: "; //Prompts for an input
+      std::cin >> personalNumberOne; //Read and assigns a value to personalNumberOne
 
-    if (decision == 'Y') {
-      int personalNumberOne;
-      int personalNumberTwo;
-      int personalResult;
+      std::cout << "Enter number 2 "; //Prompts for an input
+      std::cin >> personalNumberTwo; //Read and assigns a value to persoanlNumberTwo
 
-      std::cout << "Enter number 1 ";
-      std::cin >> personalNumberOne;
+      personalResult = personalNumberOne + personalNumberTwo; //Assigns personalResult with the sum of the values in personalNumberOne and personalNumberTwo
 
-      std::cout << "Enter number 2 ";
-      std::cin >> personalNumberTwo;
+      std::cout << personalNumberOne << " + " << personalNumberTwo << " = " << personalResult; //Outputs the values of the variables, printed operators (+, =) and personalResult
 
-      personalResult = personalNumberOne + personalNumberTwo;
-
-      std::cout << personalNumberOne << " + " << personalNumberTwo << " = " << personalResult;
-
-      return 0;
+      return 0; //Terminates the program
       
     } else {
-      return 0;
+      return 0; //Terminates the program
     }
     
 }
