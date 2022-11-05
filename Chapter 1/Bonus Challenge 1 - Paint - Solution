@@ -23,7 +23,7 @@ int main() {
 
   std::cout << "Enter a value for height ";
   std::cin >> height;
-    // Compute the total square feet to be painted - think about   the dimensions of each wall assuming standard four wall room.
+    // Compute the total square feet to be painted
 
   totalSqFt = length * height;
   totalSqFt = totalSqFt * 4;
