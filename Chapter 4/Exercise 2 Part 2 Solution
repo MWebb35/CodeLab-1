@@ -1,0 +1,12 @@
+#include <iostream> //Allows input/output
+using namespace std; //Declares the use of the standard namespace
+
+int main() {
+  int num = 108; //Initlises the variable with the top value
+  while (num != 0){ //While the value of num is not equal to 0
+    std::cout << num << "\n"; //Output the value of num to the stream
+    num -= 9; //Value of num - 9
+  }
+
+  return 0; //terminates the program
+}
