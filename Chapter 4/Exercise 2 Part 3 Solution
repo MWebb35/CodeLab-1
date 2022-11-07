@@ -1,0 +1,31 @@
+#include <iostream> //Allows Input/Output
+using namespace std; //Declares the use of the standard namespace
+
+int main() {
+
+  int user_input; //Initlises the variable user input
+  int counter = 0; //Initlise the counter variable and sets its value to 0
+
+  std::cout << "Enter any number other than " << counter << " "; //Prompts for input
+  std::cin >> user_input; //Reads and assigns value to variable
+  //Used outside of the loop to initalise it. Not 100% necessary, but it acts as a demonstration as to how loops work. Plus, it works as a contingency so the loop doesn't have to be inacted if the user enters 5 on the first try.
+
+  while (user_input != counter){ //While user_input is not equal to 5 
+    counter += 1; //Increment the counter by 1
+    std::cout << "Enter any number other than " << counter << " "; //Prompts for input
+    std::cin >> user_input; //Read and reassigns the variable with the new value
+
+    if (user_input == 5 || counter > 8) { //OR statement - whichever condition is met first
+      break; // Break clause
+    }
+  }
+
+  if (counter > 8){ 
+    std::cout << "Wow, you're more patient than I am, you win."; //Output to the console
+  }else {
+  std::cout << "Hey! You weren't supposed to enter " << counter << "! >:("; //Will output when the loop is broken
+    }
+
+  return 0; //terminates the program
+  
+}
