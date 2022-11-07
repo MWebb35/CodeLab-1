@@ -1,0 +1,23 @@
+#include <iostream> //Allows input/output
+using namespace std; //Declares the use of the standard namespace
+
+int main() {
+  int age; //Intalises the variable
+
+  std::cout << "\nEnter your age: "; //Inital prompt for input
+  std::cin >> age; //Reads and assigns value to age
+
+  while(cin.fail() || age >= 120 || age  <= 0) { //While the input isn't valid, or exceeds the critera
+    std::cout << "\nInvalid input "; //Outputs to console
+    std::cin.clear(); //Clears the input
+
+    std::cin.ignore(1000, '\n'); //ignore input - throws a massive tantrum without it
+
+    std::cout << "\nEnter your age: ";//Reprompt for input
+    std::cin >> age; //Read and assigns value to variable
+
+  }
+
+  return 0; //terminates program
+    
+}
