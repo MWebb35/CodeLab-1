@@ -1,0 +1,65 @@
+#include <iostream> //Allows Input/Output
+using namespace std; //Declares the use of the standard namespace
+
+int main() {
+  std::string student_Name; //Intialises variable as a string
+  int mark; //Initalises variable as an integer
+  int temp_mark; //Initalises the temporary variable as an integer
+
+  std::cout << "Enter the student's full name: "; //Prompts for an input
+  std::getline(std::cin, student_Name); //Makes the input read from the whole line rather than stopping at the space. This solved a logic error
+
+  std::cout << "Enter the mark (out of 100) that the student recieved: "; //Prompts for an input
+  std::cin >> temp_mark;//Assigns a value to the variable
+
+  //This IF statement assigns a value to the variable mark which can then be used in the switch statement. Honestly, I don't like this was of coding. The outputs could occur and be satisfied just by using the IF statement, rather than applying this to a switch statement later in the program. This takes up unneccessary storage which, whilst doesn't make a difference in a small program such as this one, aides in bad programming practices.
+  
+  if (temp_mark < 40){ //Conditional statement for less than 40
+    mark = 0; //assigns to the variable that will be later used in the switch statement
+  } else if (temp_mark >= 40 && temp_mark <= 50){
+    mark = 40;//assigns to the variable that will be later used in the switch statement
+  } else if (temp_mark >= 50 && temp_mark <= 60){
+    mark = 50;//assigns to the variable that will be later used in the switch statement
+  } else if (temp_mark >= 60 && temp_mark <= 70){
+    mark = 60;//assigns to the variable that will be later used in the switch statement
+  } else if (temp_mark >= 70 && temp_mark <= 80){
+    mark = 70;//assigns to the variable that will be later used in the switch statement
+  } else if (temp_mark >= 80 && temp_mark <= 90){
+    mark = 80;//assigns to the variable that will be later used in the switch statement
+  } else if (temp_mark >= 90 && temp_mark <=100){ 
+    mark = 80;//assigns to the variable that will be later used in the switch statement
+  } else {
+    mark = 1; //Contigency assign. if the user enters anything over 100 the variable mark is set to 1, which doesn't exist in the switch statement. This will then enact the Default aspect of the switch statement.
+  }
+
+switch (mark){ //declares the switch statement along with the variable it intends to use
+  case 0: //Case statement 
+    std::cout << "\n" << student_Name << ": F"; //Outputs to the console
+    break; //Breaks the switch statement
+
+  case 40://Case Statement
+    std::cout << "\n" << student_Name << ": E";//Outputs to the console
+    break;//Breaks the switch statement
+
+  case 50://Case statement 
+    std::cout << "\n" << student_Name << ": D";//Outputs to the console
+    break;//Breaks the switch statement
+
+  case 60://Case statement 
+    std::cout << "\n" << student_Name << ": C";//Outputs to the console
+    break;//Breaks the switch statement
+
+  case 70://Case statement 
+    std::cout << "\n" << student_Name << ": B";//Outputs to the console
+    break;//Breaks the switch statement
+
+  case 80://Case statement 
+    std::cout << "\n" << student_Name << ": A";//Outputs to the console
+    break;//Breaks the switch statement
+
+  default://Case statement 
+      std::cout << "The mark entered wasn't valid";//Outputs to the console
+      break;//Breaks the switch statement
+}
+  return 0;
+}
