@@ -1,5 +1,5 @@
 #include <iostream>//Allows input/output
-using namespace std;
+using namespace std; //declares the use of the standard namespace
 
 int main() {
     cout << "Would you like to continue? (Y/N): "; //ask for input
@@ -7,24 +7,18 @@ int main() {
     cin >> continue_Dec;//get user input
 
     switch (continue_Dec) { //evaluate expression
-        case 'Y': //case for Y
+        case 'Y'://Case for Y
+        case 'y'://case for y
             std::cout << "You have chosen to continue"; //cout message if user enters Y
             break; //break to end case
       
-        case 'N': //case for N
+        case 'N'://case for N
+        case 'n'://case for n
              std::cout << "You have chosen not to continue"; //cout message if user enters N
             break;
-      
-        case 'y'://Contingency for lower case inputs
-            std::cout << "You have chosen to continue"; //cout message if user enters y
-            break; //break to end case
-      
-        case 'n'://Contingency for lower case inputs
-            std::cout << "You have chosen not to continue"; //cout message if user enters n
-            break; //break to end case
       
         default: //default case
             std::cout << "The input was not recognised"; //default message if neither Y or N entered
     }
-    return 0;
+    return 0; //Terminates the program
 }
