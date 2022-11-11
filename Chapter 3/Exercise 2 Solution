@@ -1,12 +1,12 @@
 #include <iostream> //Allows Input/Output
 
 int main() {
-  int num_Month; 
+  int num_Month; //Initalises the variable as an integer
 
-  std::cout << "Enter the number of the month (e.g 1 = January, 3 = March...) : ";
+  std::cout << "Enter the number of the month (e.g 1 = January, 3 = March...) : ";//Prompts for input
   std::cin >> num_Month; //Assigns a value to the variable
 
-  switch(num_Month){
+  switch(num_Month){//Intilises the Switch statement
     case 1: //Groups cases together
     case 3:
     case 5:
@@ -14,21 +14,21 @@ int main() {
     case 8:
     case 10:
     case 12:
-      std::cout << "The month contains 31 days";
-    break;
+      std::cout << "The month contains 31 days"; //Output to the console
+    break; //Breaks the switch statement
 
-    case 4:
+    case 4://Groups case statements together
     case 6:
     case 9:
     case 11:
-      std::cout << "The month contains 30 days";
-      break;
+      std::cout << "The month contains 30 days";//Output to the console
+      break; //Breaks the switch statement
 
-    case 2:
-      std::cout << "The month contains 28/29 days";
-      break;
+    case 2://Case statement
+      std::cout << "The month contains 28/29 days";//Output to the console
+      break; //Breaks the switch statement
 
-    default:
+    default: //Default case statement
       std::cout << "The input was not recognised"; //Contingency for unrecognised inputs
       
   }
