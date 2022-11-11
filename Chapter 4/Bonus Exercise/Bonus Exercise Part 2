@@ -1,0 +1,22 @@
+#include <iostream> //Allows Input/Output
+using namespace std; //Declares the use of the standard namespace
+
+int main() {
+    
+    int myIntStart = 1; //Initalises the variable and sets its value to one
+    int myIntEnd;//Initlises the variable
+
+    std::cout << "Enter a start value: "; //Prompts for input
+    std::cin >>  myIntStart; //Reads and assigns a value to the variable
+
+    std::cout << "Enter a end value: "; //Prompts for input
+    std::cin >> myIntEnd; //Reads and assigns a value to the variable
+
+    while (myIntStart != myIntEnd+1){ //While the counter is not equal to the value of myIntEnd +1
+      std::cout << "\n" << myIntStart; //Output to the terminal
+      myIntStart += 1; //Increment the counter by one
+      
+    }
+
+    return 0; //Terminates the program
+}
