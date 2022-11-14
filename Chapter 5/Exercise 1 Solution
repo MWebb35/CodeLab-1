@@ -1,0 +1,8 @@
+#include <iostream> //Allows Input/Output
+using namespace std; //Declares use of the standard namespace
+
+int main() { //Intilises the main function
+  for(int i = 0 ; i < 10; i++){ // for i = 0, whilst i < 10, increment i by 1. i is initalised within the decleration of the for loop itself
+   std::cout << "Hello World" << endl; //Output to the terminal
+}
+}
