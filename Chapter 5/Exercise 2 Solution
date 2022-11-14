@@ -1,0 +1,70 @@
+#include <iostream> //Allows Input/Output
+
+int program1(){
+  for(int i = 0; i < 51; i++){ //intialise i as 0, set the condition to whilst i < 51 (so 50 is still included as the output), increment i by 1
+    std::cout << "\n" << i;//Output i on a new line to the console
+  }
+  return 0; //Terminates the program
+}
+
+int program2(){
+  for(int i = 50; i > -1 ; i--){ //intialise i as 0, set the condition to whilst i > -1 (so 0 is still included as the output), decrement i by 1
+    std::cout << "\n" << i;//Output i on a new line to the console
+  }
+  return 0;//Terminates the program
+}
+
+int program3(){
+  for(int i = 30; i < 51; i++){ //intialise i as 30, set the condition to whilst i < 51 (so 50 is still included as the output), increment i by 1
+    std::cout << "\n" << i;//Output i on a new line to the console
+  }
+  return 0;//Terminates the program
+}
+
+int program4(){
+  for(int i = 50; i > 8; i -= 2){ //intialise i as 50, set the condition to whilst i > 8 (so 10 is still included as the output), decrement i by 2
+    std::cout << "\n" << i;//Output i on a new line to the console
+  }
+  return 0;
+}
+
+int program5(){
+  for(int i = 100; i < 201; i += 5){ //intialise i as 100, set the condition to whilst i < 201 (so 200 is still included as the output), increment i by 5
+    std::cout << "\n" << i;//Output i on a new line to the console
+  }
+  return 0;//Terminates the program
+}
+
+int main() { //Main program (acts as a menu)
+  int decision; //Intilise variable as an integer
+
+  std::cout << "Please select a program version: (1-5) "; //prompt for input
+  std::cin >> decision; //Assigns an integer value to the variable
+
+  switch (decision){ //Declaration of the switch statement
+    case 1: //declares the case
+      program1(); //redirects the program to function program1()
+      break;//Breaks the case statement
+
+    case 2:
+      program2();//redirects the program to function program2()
+      break;
+
+    case 3:
+      program3();//redirects the program to function program3()
+      break;
+
+    case 4:
+      program4();//redirects the program to function program4()
+      break;
+
+    case 5:
+      program5();//redirects the program to function program5()
+      break;
+
+    default://Default for invalid inputs
+      std::cout << "You haven't entered a valid input. Please run the program and try again."; //Outputs to the terminal
+      break;
+  }
+ 
+}
