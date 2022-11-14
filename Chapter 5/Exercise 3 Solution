@@ -1,0 +1,11 @@
+#include <iostream> //Allows Input/Output
+
+int main() { 
+  for (int i = 20; i < 25; i++){ //Initilises i as 20, whilst i < 25 (so 24 is inlcuded in the output), increment i by 1
+    if (i % 2 == 0){ // i mod 2 == 0 would mean that i is even
+      std::cout << i << " - even\n"; //Outputs i and " - even" to the terminal
+    } else { // if odd
+      std::cout << i << " - odd\n"; //Outputs i and " - odd" to the terminal
+    }
+  }
+}
