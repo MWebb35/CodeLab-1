@@ -1,0 +1,21 @@
+#include <iostream> //Allows Input/Output
+
+//The program has been extended for n amount of iterations, and i amount of stars. This, in turn, works for 7 stars and 7 lines. It also works for any number of iterations, with any amount of stars. The amount of stars per line will be equal.
+
+int main() {
+  int userInputIter; //Intialise the variable as an integer
+  int userInputStar; //Intialise the variable as an integer
+
+  std::cout << "Please enter the number of iterations you'd like: ";//Prompt for input
+  std::cin >> userInputIter; //Assigns a value to the variable
+
+  std::cout << "Please enter the number of stars you'd like: ";//Prompt for input 
+  std::cin >> userInputStar;//Assigns a value to the variable
+
+  for (int n = 0; n < userInputIter; n++){ //intialise n as 0, whist n < the value of userInputInte, increment n by 1
+    std::cout << "\n"; //creates a new line for each n
+    for (int i = 0; i < userInputStar; i++){ //intalise i as 0, whilst i < the value of userInputStar, increment i by 1
+      std::cout << "*"; //Outputs * to the same line as many times as there is i in the loop
+    }
+  } 
+}
