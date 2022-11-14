@@ -1,0 +1,13 @@
+#include <iostream> //Allows Input/Output
+
+int main() {
+
+  for (int i = 1; i < 13; i ++){//Intalise i = 1, while i < 13 (so 12 is still included in the output), increment i by 1 
+    std::cout << "\n";//Output new line to the console
+    std::cout << i << " Times Table: ";//Output i " times table"
+    std::cout << "\n---------------\n\n";//Output to the console
+    for (int n = 1; n < 13; n++){//nested for loop - will occur for each interation of the first loop and each of its own interations. Intalise n = 1, while n < 13 (so 12 is still included in the output), increment n by 1
+      std::cout << i << " X " << n << " = " << i*n << "\n"; //Output to the console
+    }
+  }
+}
