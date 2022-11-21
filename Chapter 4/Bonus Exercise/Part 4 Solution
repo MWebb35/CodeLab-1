@@ -1,0 +1,42 @@
+#include <iostream> //Allows Input/Output
+using namespace std; //Declares the use of the standard namespace
+
+int main() {
+    
+    int myIntStart = 1; //Initalises the variable and sets its value to one
+    int myIntEnd;//Initlises the variable
+
+    int counterEven = 0; //initalises the varibale and sets its value to 0
+    int counterOdd = 0; //Initalises the variable and sets its value to 0
+
+    std::cout << "Enter a start value: "; //Prompts for input
+    std::cin >>  myIntStart; //Reads and assigns a value to the variable
+
+    std::cout << "Enter a end value: "; //Prompts for input
+    std::cin >> myIntEnd; //Reads and assigns a value to the variable
+
+    int temp = myIntStart;//Copy of the start variable
+
+    while (myIntStart != myIntEnd+1){ //While the counter is not equal to the value of myIntEnd +1
+      std::cout << "\n" << myIntStart; //Output to the terminal
+      myIntStart += 1; //Increment the counter by one
+
+      if (myIntStart % 2 == 0){ //If myIntStart mod 2 is 0, the number is even
+        counterEven += 1; //Increment the counter by 1
+      } else { //if myIntStart mod 2 is not equal to 0, the number is odd
+        counterOdd += 1; //increment the counter by 0
+      } 
+    }
+
+    int range = myIntEnd - temp; //Creates a range between the first variable and last variable, using the copy made at the start
+    for (int i = 0; i < range; i++){//While i < the range aka the ampunt of numbers between the start and end input
+      std::cout << "\n" << myIntEnd-1;//Doesn't output the end variable twice
+      myIntEnd --; //decrement end by 1
+    }
+
+    std::cout << "\nNumber of odd numbers: " << counterOdd; //Outputs to the console
+    std::cout << "\nNumber of even numbers: " << counterEven;//Outputs to the console
+  
+
+    return 0; //Terminates the program
+}
