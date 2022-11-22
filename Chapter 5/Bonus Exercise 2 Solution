@@ -1,0 +1,21 @@
+#include <iostream>//Allows input/output
+
+int main() {
+  int number1 = 1; //Initialises the variable and sets its value to one
+  int number2 = 1;//Initialises the variable and sets its value to one
+  int userInput; //Intialises the variable
+  int temp; //Intialises the variable
+
+  std::cout << "Please enter the amount of the Fibonacci sequence you would like to see: ";//Prompts for input
+  std::cin >> userInput; //Assigns a value to the variable
+
+  //User input is used to make the program interactive. 1-9? How about 1-900? If the complier can handle it without a runtime error of course! 
+  std::cout << number1; //Prints the current value of number1 which is one, as one appears at the start of the Fibonacci sequence twice
+  
+  for(int i = 0; i < userInput; i++){//Intilises i and assigns it 0, whilst i is less than the user input, increment i by 1
+    temp = number1 + number2; //adds the values of number1 and number2 together, and stores this in the temp variable
+    number1 = number2; //number1 assumes the value of number2
+    number2 = temp; //number2 assumes the value of the temporary variable, which has number1 and number2 added together
+    std::cout << "\n" << number1 << "\n";//Output to the console
+  }
+}
