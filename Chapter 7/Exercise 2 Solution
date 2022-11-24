@@ -1,0 +1,22 @@
+#include <iostream> //allows input/output
+
+int sum(int value1, int value2, int value3){ //declares an integer function and declares the parameter types it needs to operate
+  return value1 + value2 + value3; //Returns the result of value1+ value2+ value3
+}
+int main() {
+  //Initalises int variables
+  int value1;
+  int value2;
+  int value3;
+
+  std::cout << "Enter value 1: "; //Prompts for input
+  std::cin >> value1; //Assigns value to the variable
+
+  std::cout << "Enter value 2: ";//Prompts for input
+  std::cin >> value2;//Assigns value to the variable
+
+  std::cout << "Enter value 3: ";//Prompts for input
+  std::cin >> value3;//Assigns value to the variable
+  
+  std::cout << "The sum of " << value1 << " + " << value2 << " + " << value3 << " = "<< sum(value1, value2, value3); //prints to the output and calls upon the function
+}
