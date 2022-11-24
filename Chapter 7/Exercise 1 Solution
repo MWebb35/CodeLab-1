@@ -1,0 +1,14 @@
+#include <iostream> //Allows input/Output
+using namespace std; //Declares use of the common namespace
+
+void hello(){ //declares the use of a function named hello
+  std::cout << "Hello" << endl;//Output to the console
+  //I'm surprised and slightly offended that this isn't Hello World...
+}
+
+int main(){
+
+  hello(); //Calls the function hello()
+
+  return 0; //Terminates the program
+}
