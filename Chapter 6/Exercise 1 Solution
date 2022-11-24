@@ -1,0 +1,51 @@
+#include <iostream> //Allow input/Output
+
+int main() {
+  //Whilst arrays start by allocating elements to position 0, I found that there was a warning in the code if you underassigned the element decleration by 1 e.g 25 instead of 26 to represent 26 elements. Therefore, I've elected to use an extra element on each element decleration
+  char twentySix[26]; //Initialises the array twentySix with char values, and sets the amount of elements to 26
+  int ten[10];//Initialises the array ten with int values, and sets the amount of elements to 10
+  std::string four[4];//Initialises the array four with string values, and sets the amount of elements to 4
+  float eighteen[18];//Initialises the array eighteen with float values, and sets the amount of elements to 18
+
+  //This longhand was very painful to write and hurt me as a programmer, as I'm sure was the intention
+  
+  int oneToEight[8]; //Initialises the array oneToEight with int values, and sets the amount of elements to 8
+  oneToEight[0] = 1; //Assigns a value to position[i] etc...
+  oneToEight[1] = 2;
+  oneToEight[2] = 3;
+  oneToEight[3] = 4;
+  oneToEight[4] = 5;
+  oneToEight[5] = 6;
+  oneToEight[6] = 7;
+  oneToEight[7] = 8;
+
+  std::string greetings[2];//Initialises the array greetings with string values, and sets the amount of elements to 2
+  greetings[0] = "Hello";//Assigns a value to position[i] etc...
+  greetings[1] = "Bye";
+
+  char alphabet[3];//Initialises the array alphabet with char values, and sets the amount of elements to 3
+  alphabet[0] = 'A';//Assigns a value to position[i] etc...
+  alphabet[1] = 'B';
+  alphabet[2] = 'C';
+
+  float fnumbers[5];//Initialises the array fnumbers with float values, and sets the amount of elements to 5
+  fnumbers[0] = 1.0;//Assigns a value to position[i] etc...
+  fnumbers[1] = 2.0;
+  fnumbers[2] = 3.0;
+  fnumbers[3] = 4.0;
+  fnumbers[4] = 5.0;
+
+  int wholeNums[6];//Initialises the array wholeNums with int values, and sets the amount of elements to 6
+  wholeNums[0] = 10;//Assigns a value to position[i] etc...
+  wholeNums[1] = 20;
+  wholeNums[2] = 30;
+  wholeNums[3] = 40;
+  wholeNums[4] = 50;
+  wholeNums[5] = 60;
+
+  std::string a[4] = {"","a","aa","aaa"};//Initialises the array a with string values, and sets the amount of elements to 4, then appropriately assigns values accordingly
+  int tens[5] = {1,10,100,1000,10000};;//Initialises the array tens with int values, and sets the amount of elements to 5, then appropriately assigns values accordingly
+  bool boolean[4] = {1,0,0,1};;//Initialises the array boolean with bool values, and sets the amount of elements to 4, then appropriately assigns values accordingly
+  float cokeFloats[4] = {5.6,1.8,4.34,7.65};;//Initialises the array cokeFloats with float values, and sets the amount of elements to 4, then appropriately assigns values accordingly
+  
+  }
