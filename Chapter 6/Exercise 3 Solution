@@ -1,0 +1,18 @@
+#include <iostream>//Allows input/output
+
+int main() {
+  int values[10];//Intialises int array and allows it 10 element
+
+  int value; //Intialise variable
+
+  for (int i = 0; i <= 9; i++){ //Intalises i = 0, while i is less than or equal to 9 (to account for 10 values), increment i by 1
+    std::cout << "\nEnter a value: "; //Prompts for input
+    std::cin >> value; //Saves input to the variable
+
+    values[i] = value; //assigns the value to the array at position i
+  }
+
+  for (int i = 0; i <= 9; i++){ //Intialise i, while i is less than or equal to 9 (to account for 10 values), increment i by 1
+    std::cout << "\n" << values[i]; //Output the value at position i of the array values to the console
+  }
+}
