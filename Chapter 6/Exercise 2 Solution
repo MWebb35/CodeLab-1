@@ -1,0 +1,10 @@
+#include <iostream> //Allows input/output
+
+int main() {
+  std::string vehicle[5] = {"Car", "Train", "Tractor", "Skiff", "Tank"}; //Initialises the array vehicle with string elements
+ 
+  std::cout << vehicle[3] << "\n"; //Output to the console
+  std::cout << vehicle[0] << "\n";//Output to the console
+  std::cout << vehicle[2] << " " << vehicle[4] << "\n";//Output to the console
+  std::cout << vehicle[0] << " " << vehicle[3] << " " << vehicle[1] << "\n";//Output to the console
+}
