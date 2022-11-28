@@ -1,0 +1,90 @@
+#include <iostream> //Allows input/output
+
+//I expect all of these comments to be read with the same precison I had for writing them. For reference, this code took me 20 minutes to write and a further 20 minutes to add the comments. My sanity wasn't in tact before, but it certainly isn't now
+
+void f_alphabet(){ //declares the function
+  char alphabet[28] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}; //decleartion of the char array alphabet with 28 elements
+
+  std::cout << "\nThe Alphabet: "; //Output to the console
+  for (int i = 0; i < 28; i++){ //intalises i as 0, while i is less than 28, increment i by 1
+    std::cout << alphabet[i];
+  }
+
+  std::cout << "\nHalf of the Alphabet: "; //Output to the console
+
+  for (int i = 13; i < 28; i++){//intalises i as 13, while i is less than 28, increment i by 1
+    std::cout << alphabet[i];//output the value in the alphabet array at position i 
+  }
+}
+
+void f_reverse(){ //declares the function
+  int reverse[5] = {1,3,5,7,9};
+
+  std::cout << "\nReverse array: "; //Output to the console
+
+  for (int i = 4; i > -1; i--){//intalises i as 4, while i is greater than -1, decrement i by 1
+    std::cout << reverse[i];//output the value in the reverse array at position i
+  }
+}
+
+void f_average(){ //declares the function
+  int averageArray[6] = {10, 15, 25, 35, 50, 75}; //Initialises the int array averageArray with 6 elements
+  float average = 0; //declares a float variable average and sets its value to 0 - the program had a fit without setting the value to 0 as it later adds to something that in essence doesn't exist. To pacify it, setting the value of 0 seems to work
+
+  //this for loop adds each element value in the array to a new variable, which can later be manipulated
+  for (int i = 0; i <= 5; i++){//intialises ias 0, while i is less than or equal to 5, increment i by 1
+    average = average + averageArray[i];//add the value at position i of the array to average 
+  }
+
+  average = average/6; //divide average by the amount of elements in the array
+
+  std::cout << "\nAverage: " << average; //Output to the console
+}
+
+void f_highLow(){ //declares the function
+  int hilo[7] = {10, 88, 4, 21, 345, 99, 17}; //declaration of the integer hilo array with 7 elements
+
+  int temp; //intialises a temporary integer value
+
+  //Bubble sort
+  for (int i = 0; i < 7; i++) {
+          for (int n = 0; n < 7; n++) {
+              if (hilo[n] < hilo[n + 1]) {
+                  temp = hilo[n + 1];
+                  hilo[n + 1] = hilo[n];
+                  hilo[n] = temp;
+                }
+            }
+    }
+
+  std::cout << "\nHighest Value: " << hilo[0]; //Output to the console - position 0 will be the highest due to the bubble sort ordering
+  std::cout << "\nLowest Value: " << hilo[6]; //Output to the console - position 6 will be the lowest value due to the bubble sort ordering
+}
+
+void f_oneHun(){ //declares the function
+  int hundred[100] = {}; //intalise an integer array with 100 possible elements (and make this array empty for this point in the program)
+
+  std::cout << "\n\nOne Hundred Values: "; //Output to the console
+
+  for (int i = 0; i < 101; i++){//intalises i as 0, while i is less than 101, increment i by 1
+    hundred[i] = i;
+    std::cout << hundred[i] << ",";//output the value in the hundred array at position i
+  }
+
+  std::cout << "\n\n50 odd numbers: "; //Output to the console
+
+  for (int i = 0; i < 101; i++){//intalises 0, while i is less than 101, increment i by 1
+    if (hundred[i]%2 != 0){
+      std::cout << hundred[i] << ",";//output the value in the hundred array at position i
+    }
+  }
+ 
+}
+
+int main() { 
+  f_alphabet(); //Calls the function
+  f_reverse(); //Calls the function
+  f_average(); //Calls the function
+  f_highLow(); //Calls the function
+  f_oneHun(); //Calls the function
+}
