@@ -1,0 +1,21 @@
+#include <iostream> //Allows input/output
+using namespace std; //declares use of the common namespace
+std::string greetings(std::string userName, std::string greeting){ //declares the function and its parameters
+  return greeting + " " + userName;//return newly formed string
+}
+
+int main(){
+  std::string userName;//declare variable to store userName
+  std::string greeting;//declare variable to store greeting
+
+  cout << "Please enter your name: " << endl;//ask user for name input
+  std::cin >> userName;//store input
+
+  cout << "\nPlease enter your greeting: " << endl;//ask user for greeting input
+  std::cin >> greeting;//store input
+
+ greeting = greetings(userName, greeting);// invoke function and assign returned value to string variable
+  cout << greeting << endl;//output the greeting
+
+  return 0; //terminates the program
+}
