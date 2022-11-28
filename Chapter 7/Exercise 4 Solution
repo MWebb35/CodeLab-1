@@ -1,0 +1,27 @@
+#include <iostream> //allows input/output
+
+int max_two(int num1, int num2){ //declares the function and its parameters 
+    if (num1 > num2){ //conditional statement is num1 is greater than num2
+      return num1; //return num1 as it is the higher value
+    } else if (num1 < num2){//conditional statement is num1 is less than num2
+      return num2; //return num2 as it is the higher value
+    } else if (num1 == num2){ //conditional statement if num1 is equal to num2
+      return num1; //return num1 as both numbers are the same 
+    }
+}
+
+int main() {
+  int num1; //intialise num1 as an integer
+  int num2; //intialise num2 as an integer
+  int max; //intialise max as an integer
+
+  std::cout << "\nEnter number 1: "; //prompt for input
+  std::cin >> num1; //assign value to the variable num1
+
+  std::cout << "\nEnter number 2: "; //prompt for input
+  std::cin >> num2; //assign value to the variable num2
+ 
+  max = max_two(num1, num2); //call to function max_two with its parameters and store the return as the value of max
+
+  std::cout << "\nThe maximum number is: " << max; //output to the console with the result of max
+}
