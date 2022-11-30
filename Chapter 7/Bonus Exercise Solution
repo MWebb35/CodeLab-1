@@ -1,0 +1,220 @@
+#include <iostream> //allows input/output
+using namespace std; /*declaration of the standard namespace 
+Used mostly as a contingency as its a big program, and I was having an issue with the random function that I thought this would solve. 
+It didn't, but I managed to get it to work anyway. Keeping this in there for old times sake :)
+(the srand was in the wrong place.. not the wrong place it ended up being, 
+but the Madison who wrote the previous statement didn't know that at the time... yay for hindsight)*/
+
+/*Decleration of the variables in this space makes the variables global. 
+Easier to keep track of rather than defining them in the main function.
+I still pass the variables into each of the function as that was part of the task, but it isn't strictly necessary*/
+int menuSelection;
+int points = 0;
+int num1;
+int num2;
+char playAgain = 'Y';
+int operatorType;
+int userAnswer;
+bool correct;
+int attempts = 2;
+
+int displayMenu(){ 
+/*I'd argue that this function isn't necessary as you could do this in the main which would avoid function hopping. 
+This could be in the main program, which would save on returning the variable that already has its assignment*/
+
+  while (menuSelection != 1 || menuSelection != 2 || menuSelection != 3){//contingency for if the user enters the wrong number - allows for multiple entries and only accepts a valid input
+    std::cout << "\nDIFFICULTY LEVEL\n1. Easy\n2. Medium\n3. Hard\nLevel selection (1-3): ";//Output to the console
+
+  std::cin >> menuSelection; //Assign the input as the value to the variable
+
+    if (menuSelection == 1 || menuSelection == 2 || menuSelection == 3){ //checcks to see if the input is valid
+    return menuSelection; //Returns the newly assigned value
+    }
+  }
+}
+
+
+int randomInt(){
+
+  //srand(time(NULL));//Sets the random seed
+
+  int y = 0;//Intialises the variable to 0
+
+  /* 17:39: As of writing this, there's an issue where num1 and num2 each gain the same number, despite them calling upon the function at different times. 
+
+UPDATE 17:47: The issue is now fixed. 
+Apparently srand in the main program rather than the function makes a difference???
+I'm not going to question it. It's done. I'm not touching it.*/
+  
+
+  switch(menuSelection){ //Switch statement using the global menuSelection
+
+    case 1:
+          y = rand() % 9 + 1; //assigns a random value up to 9
+          return y; //returns y
+          y = 0; //Isn't necessary but I don't want to break my program. I don't care if it stays here as redundant code. It's a nice memorial to the brain cells wasted on the random number generator. 
+          break;
+
+    case 2:
+          y = rand() % 99 + 1; //assigns a random value up to 99
+          return y;
+          y = 0;
+          break;
+
+    case 3:
+          y = rand() % 999 + 1; //assigns a random value up to 999
+          return y;
+          y = 0;
+          break;
+
+    default: 
+      std::cout << "";
+      y = 0;
+      break;
+    }
+  
+  return 0;
+}
+
+int decideOperation(){
+  /*This function picks a random number between 1-4
+ This correlates to the case statements in both displayProblem and isCorrect respectively 
+The random number correlates to an assigned operator*/
+  srand(time(NULL));//sets the random seed. I don't know if removing this breaks my program and I don't care to find out
+  int operatorDec; //declares an integer value
+
+  operatorDec = rand() % 4 + 1;
+
+  return operatorDec;
+}
+
+void displayProblem(int num1, int operatorType, int num2){
+
+  std::cout << "\nAttempts left: " << attempts;//Output to the console
+  switch (operatorType){//Case statement to output the operator used
+    case 1:
+      std::cout << "\n" << num1 << " + " << num2 << " = ";
+      break;
+    
+    case 2:
+      std::cout << "\n" << num1 << " - " << num2 << " = ";
+      break;
+    
+    case 3:
+      std::cout << "\n" << num1 << " * " << num2 << " = ";
+      break;
+    
+    case 4:
+      std::cout << "\n" << num1 << " / " << num2 << " = ";
+      break;
+  } 
+}
+
+bool isCorrect(int num1, int operatorType, int num2, int userAnswer){
+//This function determines whether userAnswer matches the value of the equation, and returns the appropriate boolean value
+  switch (operatorType){ //case statement with operatorType as a parameter, which corresponds to a certain operator
+    case 1: //e.g 1 = +
+      if (userAnswer == (num1+num2)){
+        return 1; //1 = True
+      } else {
+        return 0; //0 = False
+      }
+      break;
+
+    case 2:
+      if (userAnswer == (num1-num2)){
+        return 1;
+      } else {
+        return 0;
+      }
+      break;
+
+    case 3:
+      if (userAnswer == (num1*num2)){
+        return 1;
+      } else {
+        return 0;
+      }
+      break;
+
+    case 4:
+      if (userAnswer == (num1/num2)){
+        return 1;
+      } else {
+        return 0;
+      }
+      break;
+  }
+
+  return 0; //return 0 if the case statement fails
+}
+
+void displayFinalResults(int points){
+  //This function occurs at the end of the game and displays the users final points
+  std::cout << "\nYou have earned " << points << " points";//Output to console
+
+  std::cout << "\nThanks for playing!";
+  
+}
+
+int main() {
+  while (playAgain == 'Y' && attempts >= 1){//main while loop that keeps everything neat and tidy (and allows for iteration)
+    srand(time(NULL));//Sets the random seed
+
+    menuSelection = displayMenu();//call to function
+  
+    num1 = randomInt(); //uses the return result as the value for the variable
+    num2 = randomInt();  //uses the return result as the value for the variable
+    operatorType = decideOperation();  //uses the return result as the value for the variable
+
+    while (attempts >= 1 && correct == 0) { //intialises the attempts attribute 
+      displayProblem(num1, operatorType, num2); //call to the function with relevant parameters 
+
+      std::cin >> userAnswer;//assigns a value to the variable
+
+      correct = isCorrect(num1, operatorType, num2, userAnswer); // //call to the function with specified parameters and uses the return result as the value for the variable
+
+      if (correct == 1){
+        std::cout << "\nYou got the calculation right!";//output to the console
+        if (attempts == 2){//embedded if statement
+          points += 10;
+          attempts = 2;//reset attempts for the next question
+        } else if (attempts == 1){
+          points += 5;
+          attempts = 2;//reset attempts for the next question
+        }
+      } else {
+        attempts --;//decrement attempts by 1
+      }
+    }
+
+    correct = 0; //reset correct for next question
+    
+    if (attempts == 0){ //if user has run out of the attempts to play
+      std::cout << "\nYou have given the incorrect answer too many times.\nYou are unfortunately unable to continue with this game.";//output to console
+
+    } else {
+      std::cout << "\nWould you like to play again? Y/N ";
+      std::cin >> playAgain;
+    } 
+  }
+
+  displayFinalResults(points);//call to function with parameter
+  
+  //error checks
+  //std::cout << "\n" << operatorType;
+  //std::cout << menuSelection;
+
+}
+
+/*Order of Functions used:
+displayMenu()
+randomInt()
+randomInt()
+decideOperator()
+displayProblem()
+isCorrect()
+repeats if user wants to continue
+else (or if attempts = 0):
+displayFinalResults()
+*/
