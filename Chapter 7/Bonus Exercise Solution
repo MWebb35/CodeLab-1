@@ -1,40 +1,29 @@
-#include <iostream> //allows input/output
+#include <iostream>
 using namespace std; /*declaration of the standard namespace 
 Used mostly as a contingency as its a big program, and I was having an issue with the random function that I thought this would solve. 
 It didn't, but I managed to get it to work anyway. Keeping this in there for old times sake :)
 (the srand was in the wrong place.. not the wrong place it ended up being, 
 but the Madison who wrote the previous statement didn't know that at the time... yay for hindsight)*/
 
-/*Decleration of the variables in this space makes the variables global. 
-Easier to keep track of rather than defining them in the main function.
-I still pass the variables into each of the function as that was part of the task, but it isn't strictly necessary*/
-int menuSelection;
-int points = 0;
-int num1;
-int num2;
-char playAgain = 'Y';
-int operatorType;
-int userAnswer;
-bool correct;
-int attempts = 2;
-
 int displayMenu(){ 
 /*I'd argue that this function isn't necessary as you could do this in the main which would avoid function hopping. 
 This could be in the main program, which would save on returning the variable that already has its assignment*/
 
+  int menuSelection;
+
   while (menuSelection != 1 || menuSelection != 2 || menuSelection != 3){//contingency for if the user enters the wrong number - allows for multiple entries and only accepts a valid input
-    std::cout << "\nDIFFICULTY LEVEL\n1. Easy\n2. Medium\n3. Hard\nLevel selection (1-3): ";//Output to the console
+    std::cout << "\n\nDIFFICULTY LEVEL\n1. Easy\n2. Medium\n3. Hard\nLevel selection (1-3): ";//Output to the console
 
   std::cin >> menuSelection; //Assign the input as the value to the variable
 
-    if (menuSelection == 1 || menuSelection == 2 || menuSelection == 3){ //checcks to see if the input is valid
+    if (menuSelection == 1 || menuSelection == 2 || menuSelection == 3){ //checks to see if the integer input is valid
     return menuSelection; //Returns the newly assigned value
     }
   }
 }
 
 
-int randomInt(){
+int randomInt(int &menuSelection){
 
   //srand(time(NULL));//Sets the random seed
 
@@ -47,7 +36,7 @@ Apparently srand in the main program rather than the function makes a difference
 I'm not going to question it. It's done. I'm not touching it.*/
   
 
-  switch(menuSelection){ //Switch statement using the global menuSelection
+  switch(menuSelection){ //Switch statement using menuSelection
 
     case 1:
           y = rand() % 9 + 1; //assigns a random value up to 9
@@ -83,13 +72,14 @@ The random number correlates to an assigned operator*/
   srand(time(NULL));//sets the random seed. I don't know if removing this breaks my program and I don't care to find out
   int operatorDec; //declares an integer value
 
-  operatorDec = rand() % 4 + 1;
+  operatorDec = rand() % 4 + 1; //picks a random number between 1 and 4 which is *spoiler alert* later associated an operator
 
   return operatorDec;
 }
 
-void displayProblem(int num1, int operatorType, int num2){
+void displayProblem(int &question, int &num1, int &operatorType, int &num2, int &attempts){
 
+  std::cout << "\n\nQuestion " << question << "/10"; //displays what question the user is on
   std::cout << "\nAttempts left: " << attempts;//Output to the console
   switch (operatorType){//Case statement to output the operator used
     case 1:
@@ -110,7 +100,7 @@ void displayProblem(int num1, int operatorType, int num2){
   } 
 }
 
-bool isCorrect(int num1, int operatorType, int num2, int userAnswer){
+bool isCorrect(int &num1, int &operatorType, int &num2, int &userAnswer){
 //This function determines whether userAnswer matches the value of the equation, and returns the appropriate boolean value
   switch (operatorType){ //case statement with operatorType as a parameter, which corresponds to a certain operator
     case 1: //e.g 1 = +
@@ -149,57 +139,93 @@ bool isCorrect(int num1, int operatorType, int num2, int userAnswer){
   return 0; //return 0 if the case statement fails
 }
 
-void displayFinalResults(int points){
+void displayFinalResults(int &points){
   //This function occurs at the end of the game and displays the users final points
   std::cout << "\nYou have earned " << points << " points";//Output to console
-
-  std::cout << "\nThanks for playing!";
   
 }
 
-int main() {
-  while (playAgain == 'Y' && attempts >= 1){//main while loop that keeps everything neat and tidy (and allows for iteration)
-    srand(time(NULL));//Sets the random seed
+void questions(int &question,int &points, int &attempts, int &menuSelection, bool &correct){
+  int userAnswer;
+  int num1;
+  int num2;
+  int operatorType;
 
-    menuSelection = displayMenu();//call to function
-  
-    num1 = randomInt(); //uses the return result as the value for the variable
-    num2 = randomInt();  //uses the return result as the value for the variable
-    operatorType = decideOperation();  //uses the return result as the value for the variable
+  srand(time(NULL));//Sets the random seed
 
-    while (attempts >= 1 && correct == 0) { //intialises the attempts attribute 
-      displayProblem(num1, operatorType, num2); //call to the function with relevant parameters 
+  num1 = randomInt(menuSelection); //uses the return result as the value for the variable
+  num2 = randomInt(menuSelection);  //uses the return result as the value for the variable
+  operatorType = decideOperation();  //uses the return result as the value for the variable
 
-      std::cin >> userAnswer;//assigns a value to the variable
+  while (correct == 0 && attempts != 0){ //logic error with using || instead of && - amended now!
+        displayProblem(question, num1, operatorType, num2, attempts); //call to the function with relevant parameters 
 
-      correct = isCorrect(num1, operatorType, num2, userAnswer); // //call to the function with specified parameters and uses the return result as the value for the variable
+        std::cin >> userAnswer;//assigns a value to the variable
 
-      if (correct == 1){
-        std::cout << "\nYou got the calculation right!";//output to the console
-        if (attempts == 2){//embedded if statement
-          points += 10;
-          attempts = 2;//reset attempts for the next question
-        } else if (attempts == 1){
-          points += 5;
-          attempts = 2;//reset attempts for the next question
-        }
-      } else {
-        attempts --;//decrement attempts by 1
+        correct = isCorrect(num1, operatorType, num2, userAnswer); // //call to the function with specified parameters and uses the return result as the value for the variable
+
+        if (correct == 1){
+          std::cout << "\nYou got the calculation right!";//output to the console
+          if (attempts == 2){//embedded if statement
+            points += 10;
+            attempts = 2;//reset attempts for the next question
+          } else if (attempts == 1){
+            points += 5;
+            attempts = 2;//reset attempts for the next question
+          }
+        } else {
+          attempts --;//decrement attempts by 1
       }
     }
 
     correct = 0; //reset correct for next question
-    
+}
+
+int main() {
+  
+  int points = 0;
+  char playAgain = 'Y';
+  bool correct = false;
+  int attempts = 2;
+  
+  while (playAgain == 'Y' && attempts >= 1){//main while loop that keeps everything neat and tidy (and allows for iteration)
+    //srand(time(NULL));//Sets the random seed - moved to help with randomisation
+
+    int menuSelection; //Resets every round
+    int question = 0; //Resets every round
+
+    menuSelection = displayMenu();//call to function
+
+    while (question < 10 && attempts != 0){ //while question counter is less than 10 and attempts is not equal to 0 - allows for the implementation of a round system
+      question++; //increment question by 1
+      questions(question, points, attempts, menuSelection, correct); //call to the question function
+    }
+
+    if (question == 10){ //signifys end of round
+      displayFinalResults(points);//call to function
+      std::cout << "\n\nWould you like to play again? Y/N "; //prompt for input
+      std::cin >> playAgain; //determines if the loop continues
+
+      if (playAgain == 'N'){
+        std::cout << "\nThanks for playing!"; 
+      }
+    }
+
     if (attempts == 0){ //if user has run out of the attempts to play
       std::cout << "\nYou have given the incorrect answer too many times.\nYou are unfortunately unable to continue with this game.";//output to console
+      displayFinalResults(points);
+      std::cout << "\nThanks for playing!";
+      playAgain = 'N'; //breaks the loop - effectively ends the program
+}
 
-    } else {
-      std::cout << "\nWould you like to play again? Y/N ";
-      std::cin >> playAgain;
+
+
+   // } else {
+     // 
+    
     } 
-  }
 
-  displayFinalResults(points);//call to function with parameter
+ //displayFinalResults(points);//call to function with parameter
   
   //error checks
   //std::cout << "\n" << operatorType;
@@ -209,6 +235,7 @@ int main() {
 
 /*Order of Functions used:
 displayMenu()
+question()
 randomInt()
 randomInt()
 decideOperator()
@@ -218,3 +245,4 @@ repeats if user wants to continue
 else (or if attempts = 0):
 displayFinalResults()
 */
+
